@@ -2,6 +2,8 @@
 
 Data Engineer · Big Data & Backend Developer olarak deneyimlerimi, projelerimi ve eğitimimi tanıttığım kişisel portfolyo sitesi.
 
+🌐 **Canlı site:** [kadirkaganyukseldeveloper.com](https://kadirkaganyukseldeveloper.com)
+
 ## Özellikler
 
 - **Çift dil (TR / EN):** Tek tıkla Türkçe ↔ İngilizce geçiş; tercih tarayıcıda hatırlanır.
