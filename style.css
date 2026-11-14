@@ -154,9 +154,8 @@ h1 { font-size: clamp(44px, 7vw, 76px); line-height: 1.02; letter-spacing: -0.03
 .stat span { font-size: 13.5px; color: var(--muted); }
 
 /* SECTIONS */
-.section { padding-top: 110px; }
-.section-head { display: flex; align-items: baseline; gap: 14px; margin-bottom: 40px; }
-.num { color: var(--accent); font-size: 14px; }
+.section { padding-top: 80px; }
+.section-head { display: flex; align-items: baseline; gap: 14px; margin-bottom: 32px; }
 h2 { font-size: clamp(28px, 4vw, 38px); letter-spacing: -0.03em; font-weight: 750; }
 h3 { font-size: 17px; font-weight: 650; letter-spacing: -0.01em; }
 
@@ -224,7 +223,7 @@ h3 { font-size: 17px; font-weight: 650; letter-spacing: -0.01em; }
 .skill-group .tag:hover { border-color: var(--accent); color: var(--accent); }
 
 /* EDUCATION */
-.edu-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 24px; }
+.edu-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 24px; align-items: start; }
 .edu-list { display: flex; flex-direction: column; gap: 16px; }
 .edu { padding: 24px 26px; border-radius: var(--radius); background: var(--card); border: 1px solid var(--line); display: flex; justify-content: space-between; gap: 16px; }
 .edu .degree { font-weight: 650; }
@@ -256,12 +255,12 @@ h3 { font-size: 17px; font-weight: 650; letter-spacing: -0.01em; }
 
 /* CONTACT */
 .contact-card {
-  text-align: center; padding: 64px 32px; border-radius: 28px; border: 1px solid var(--line);
+  text-align: center; padding: 48px 32px; border-radius: 28px; border: 1px solid var(--line);
   background:
     radial-gradient(600px 240px at 50% 0%, var(--accent-soft), transparent 70%),
     var(--card);
 }
-.contact-card h2 { margin: 10px 0 12px; }
+.contact-card h2 { margin: 0 0 12px; }
 .contact-card > p { color: var(--muted); max-width: 520px; margin: 0 auto; }
 .mail { display: inline-block; margin-top: 22px; font-size: clamp(13px, 2.4vw, 17px); color: var(--accent); word-break: break-all; }
 .mail:hover { text-decoration: underline; }
@@ -272,6 +271,14 @@ h3 { font-size: 17px; font-weight: 650; letter-spacing: -0.01em; }
 /* REVEAL */
 .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.7s ease, transform 0.7s ease; }
 .reveal.visible { opacity: 1; transform: none; }
+
+/* CARD HOVER (after .reveal so the lift isn't overridden) */
+.stat, .skill-group, .edu, .cert-box, .contact-card { transition: opacity 0.7s ease, transform 0.25s ease, border-color 0.25s, box-shadow 0.25s; }
+.stat:hover, .skill-group:hover, .edu:hover, .cert-box:hover, .contact-card:hover {
+  transform: translateY(-3px); border-color: color-mix(in srgb, var(--accent) 40%, var(--line)); box-shadow: var(--shadow);
+}
+.project:hover { transform: translateY(-4px); }
+
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; transition: none; }
   html { scroll-behavior: auto; }
@@ -300,10 +307,10 @@ h3 { font-size: 17px; font-weight: 650; letter-spacing: -0.01em; }
   .projects, .skills { grid-template-columns: 1fr; }
   .stat { min-height: 76px; padding: 18px 12px; }
   .stat strong { font-size: 17px; }
-  .section { padding-top: 80px; }
+  .section { padding-top: 56px; }
   .job, .project { padding: 22px; }
   .edu { flex-direction: column; }
   .edu .side { text-align: left; }
   .photo-wrap { width: 220px; }
-  .contact-card { padding: 48px 20px; }
+  .contact-card { padding: 40px 20px; }
 }
